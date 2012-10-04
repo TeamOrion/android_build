@@ -199,8 +199,10 @@ ifeq (,$(strip $(OUT_DIR)))
 ifeq (,$(strip $(OUT_DIR_COMMON_BASE)))
 OUT_DIR := $(TOPDIR)out
 else
-OUT_DIR := $(OUT_DIR_COMMON_BASE)/$(notdir $(PWD))
+OUT_DIR := $(shell python -c 'import os,sys; print os.path.realpath(sys.argv[1])' .)/out
 endif
+else
+OUT_DIR := $(OUT_DIR_COMMON_BASE)/$(notdir $(PWD))
 endif
 
 DEBUG_OUT_DIR := $(OUT_DIR)/debug
