@@ -688,8 +688,8 @@ function tapas()
 function eat()
 {
     if [ "$OUT" ] ; then
-        MODVERSION=$(get_build_var SLIM_VERSION)
-        ZIPFILE=$SLIM_MOD_VERSION.zip
+        MODVERSION=$(get_build_var ORION_VERSION)
+        ZIPFILE=$ORION_MOD_VERSION.zip
         ZIPPATH=$OUT/$ZIPFILE
         if [ ! -f $ZIPPATH ] ; then
             echo "Nothing to eat"
